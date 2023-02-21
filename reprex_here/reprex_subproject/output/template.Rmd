@@ -1,0 +1,15 @@
+
+```{r heading_loop-{{species}}, results = 'asis', echo = FALSE }
+cat('\n\n## {{species}}\n\n')
+```
+
+
+```{r species_loop-{{species}}, echo = FALSE}
+df_filtered <- df %>% 
+     dplyr::filter(Species == "{{species}}")
+
+df_filtered %>%
+     ggplot2::ggplot(ggplot2::aes(Sepal.Length, Petal.Length)) +
+     ggplot2::geom_point()
+
+```

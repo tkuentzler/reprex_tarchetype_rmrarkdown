@@ -1,0 +1,31 @@
+---
+title: "Untitled"
+author: "Author"
+date: "21 2 2023"
+output: 
+  html_document:
+    keep_md: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(here)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+df <- datasets::iris %>% 
+  dplyr::as_tibble()
+```
+
+# Test {.tabset}
+```{r, include = FALSE}
+src <- lapply(c("setosa", "versicolor", "virginica"),
+             function(species) {
+                  knitr::knit_expand(file = here("reprex_subproject/output/template.Rmd"))
+             }
+)
+```
+
+`r knitr::knit(text = unlist(src))`
