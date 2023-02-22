@@ -11,6 +11,13 @@ output:
 
 
 ```r
+root <- rprojroot::find_root_file(criterion = "_targets.R") # Find the pipeline root directory.
+knitr::opts_knit$set(root.dir = root) # Run the report from the pipeline root directory. 
+knitr::opts_chunk$set(fig.path = file.path(root, "output", "report_files/"))
+```
+
+
+```r
 df <- datasets::iris %>% 
   dplyr::as_tibble()
 ```
@@ -23,16 +30,16 @@ df <- datasets::iris %>%
 ## setosa
 
 
-![](report_files/figure-html/species_loop-setosa-1.png)<!-- -->
+![](/Users/c240390/Desktop/reprex_tarchetype_rmrarkdown/reprex_here/reprex_subproject/output/report_files/species_loop-setosa-1.png)<!-- -->
 
 
 ## versicolor
 
 
-![](report_files/figure-html/species_loop-versicolor-1.png)<!-- -->
+![](/Users/c240390/Desktop/reprex_tarchetype_rmrarkdown/reprex_here/reprex_subproject/output/report_files/species_loop-versicolor-1.png)<!-- -->
 
 
 ## virginica
 
 
-![](report_files/figure-html/species_loop-virginica-1.png)<!-- -->
+![](/Users/c240390/Desktop/reprex_tarchetype_rmrarkdown/reprex_here/reprex_subproject/output/report_files/species_loop-virginica-1.png)<!-- -->

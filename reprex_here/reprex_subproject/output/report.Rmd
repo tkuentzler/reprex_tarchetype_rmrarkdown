@@ -15,6 +15,12 @@ library(ggplot2)
 ```
 
 ```{r}
+root <- rprojroot::find_root_file(criterion = "_targets.R") # Find the pipeline root directory.
+knitr::opts_knit$set(root.dir = root) # Run the report from the pipeline root directory. 
+knitr::opts_chunk$set(fig.path = file.path(root, "output", "report_files/"))
+```
+
+```{r}
 df <- datasets::iris %>% 
   dplyr::as_tibble()
 ```
@@ -23,7 +29,7 @@ df <- datasets::iris %>%
 ```{r, include = FALSE}
 src <- lapply(c("setosa", "versicolor", "virginica"),
              function(species) {
-                  knitr::knit_expand(file = here("reprex_subproject/output/template.Rmd"))
+                  knitr::knit_expand(file = file.path(root, "output/template.Rmd"))
              }
 )
 ```
