@@ -1,2 +1,2 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-report|stem||fad9418cfd722539|4745aa592080ea1d|-237041703||t19409.4211828647s||0|file|local|vector|||1.361||pandoc document conversion failed with error 99
+report|stem|2f5c4b3005668782|44e3ffe3658e1fb4|4745aa592080ea1d|-237041703|output/report.html*output/report.Rmd*output/report_files|t19410.108878107s|c4eeb01cee59a9d5|802969|file|local|vector|||4.38||
